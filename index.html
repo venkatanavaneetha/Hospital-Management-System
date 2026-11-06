@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <h2>🏥 MediCare</h2>
+
+            <ul>
+                <li onclick="showDashboard()">Dashboard</li>
+                <li onclick="showPatients()">Patients</li>
+                <li onclick="showForm()">Add Patient</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+
+            <header>
+                <h2>Hospital Management System</h2>
+                <span>Admin Panel</span>
+            </header>
+
+            <section id="dashboard">
+
+                <h1>Dashboard</h1>
+                <p>Welcome to Hospital Management System</p>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <h3>Total Patients</h3>
+                        <h1 id="totalPatients">0</h1>
+                    </div>
+
+                    <div class="card">
+                        <h3>Male Patients</h3>
+                        <h1 id="malePatients">0</h1>
+                    </div>
+
+                    <div class="card">
+                        <h3>Female Patients</h3>
+                        <h1 id="femalePatients">0</h1>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="patientSection" class="hidden">
+
+                <h1>Patient Management</h1>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search patient by name..."
+                    oninput="displayPatients()"
+                >
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Phone</th>
+                            <th>Disease</th>
+                            <th>Doctor</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="patientTable"></tbody>
+
+                </table>
+
+            </section>
+
+            <section id="formSection" class="hidden">
+
+                <h1 id="formTitle">Add Patient</h1>
+
+                <form id="patientForm">
+
+                    <input type="hidden" id="patientId">
+
+                    <label>Patient Name</label>
+                    <input type="text" id="name" placeholder="Enter patient name" required>
+
+                    <label>Age</label>
+                    <input type="number" id="age" placeholder="Enter age" min="1" max="120" required>
+
+                    <label>Gender</label>
+                    <select id="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter 10 digit phone number" pattern="[0-9]{10}" required>
+
+                    <label>Disease</label>
+                    <input type="text" id="disease" placeholder="Enter disease" required>
+
+                    <label>Doctor Name</label>
+                    <input type="text" id="doctorName" placeholder="Enter doctor name" required>
+
+                    <button type="submit" id="submitBtn">Add Patient</button>
+
+                    <button type="button" class="cancel-btn" onclick="showDashboard()">Cancel</button>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="Script.js"></script>
+
+</body>
+</html>
