@@ -3,6 +3,8 @@
 ## Project Description
 The Hospital Management System is a simple frontend CRUD (Create, Read, Update, Delete) web application developed using HTML, CSS, and JavaScript.
 
+https://venkatanavaneetha.github.io/Hospital-Management-System/
+
 This application helps manage patient information, including adding new patients, viewing patient details, updating records, and deleting patient records.
 
 ## Technologies Used
